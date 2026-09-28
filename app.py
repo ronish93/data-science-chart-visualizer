@@ -4,6 +4,50 @@ import plotly.express as px
 
 # 1. Page Configuration
 st.set_page_config(page_title="Data Science Chart Studio", layout="wide")
+# --- PREMIUM CUSTOM CSS INJECTION ---
+st.markdown("""
+    <style>
+        /* 1. Change core website background and main font stack */
+        .stApp {
+            background-color: #F8F9FA;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        /* 2. Upgrade the Main Header styling with a smooth dark gradient background */
+        h1 {
+            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800 !important;
+            letter-spacing: -0.5px;
+            padding-bottom: 10px;
+        }
+        
+        /* 3. Make sidebar/configuration panel look like a sleek modern card floating layout */
+        [data-testid="stVerticalBlock"] > div:has(div.stSelectbox) {
+            background-color: #FFFFFF !important;
+            border-radius: 16px !important;
+            padding: 24px !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
+            border: 1px solid #E5E7EB !important;
+        }
+
+        /* 4. Style select boxes and dropdown parameter input forms neatly */
+        .stSelectbox div[data-baseweb="select"] {
+            border-radius: 8px !important;
+            border-color: #D1D5DB !important;
+        }
+        
+        /* 5. Custom card background box for your chart visualization frame wrapper */
+        .plotly-graph-div {
+            background-color: #FFFFFF !important;
+            border-radius: 16px !important;
+            padding: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 st.title("📊 Ultimate Data Science Chart Visualizer")
 st.write("Upload your dataset to unlock full exploratory data science insights instantly.")
 
